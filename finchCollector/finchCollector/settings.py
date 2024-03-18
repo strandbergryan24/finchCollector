@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -74,15 +74,13 @@ WSGI_APPLICATION = 'finchCollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+local_database_url = 'postgresql://postgres:postgres@localhost:5432/finch-collector'
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'finch_collector',
-        'USER': 'finch_collector_user',  
-        'PASSWORD': 'GEjWitbQ05q4xFMkE1vQ1dW8BCaJYgkM', 
-        'HOST': 'dpg-cnruemf109ks73fi8d80-a',  
-        'PORT': '5432', 
-    } 
+    'default': dj_database_url.config(
+        default=local_database_url,
+        conn_max_age=600
+    )
 }
 
 
