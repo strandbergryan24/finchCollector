@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'finch_collector',
         'USER': 'finch_collector_user',
-        'PASSWORD': 'finch_collector_user',  # You may want to set this securely
+        'PASSWORD': 'GEjWitbQ05q4xFMkE1vQ1dW8BCaJYgkM',  # You may want to set this securely
         'HOST': 'dpg-cnruemf109ks73fi8d80-a',
         'PORT': '5432',
     }
