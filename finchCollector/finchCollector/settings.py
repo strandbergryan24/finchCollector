@@ -77,13 +77,14 @@ WSGI_APPLICATION = 'finchCollector.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'finchCollector',
-        'USER': 'postgres',
-        'PASSWORD': 'snow1122',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+        'NAME': 'finch_collector',
+        'USER': 'finch_collector_user',  
+        'PASSWORD': 'GEjWitbQ05q4xFMkE1vQ1dW8BCaJYgkM', 
+        'HOST': 'dpg-cnruemf109ks73fi8d80-a',  
+        'PORT': '5432', 
+    } 
 }
+
 
 
 # Password validation
