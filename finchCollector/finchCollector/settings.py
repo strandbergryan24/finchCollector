@@ -75,16 +75,18 @@ WSGI_APPLICATION = 'finchCollector.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-local_database_url = 'postgresql://postgres:postgres@localhost:5432/finch-collector'
+local_database_url = 'postgresql://finch_collector_user:finch_collector_user@dpg-cnruemf109ks73fi8d80-a:5432/finch_collector'
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=local_database_url,
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'finch_collector',
+        'USER': 'finch_collector_user',
+        'PASSWORD': 'finch_collector_user',  # You may want to set this securely
+        'HOST': 'dpg-cnruemf109ks73fi8d80-a',
+        'PORT': '5432',
+    }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
